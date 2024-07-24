@@ -1,0 +1,64 @@
+formatter: "markdown" # this is required
+
+version: "v0.16.0"
+
+header-from: main.tf
+
+recursive:
+  enabled: false
+  path: modules
+
+sections:
+  hide: []
+  show: []
+
+content: |-
+  # Terraform Overview
+
+  The detailed information about Terraform infrastructure. Use command [terraform-docs](https://terraform-docs.io/user-guide/installation/)  to re-generate the readme.
+
+  ```bash
+  cd terraform
+  terraform-docs -c .terraform-docs.yaml . > Terraform.md
+  ```
+
+  {{ .Providers }}
+
+  The module automatically inherits default provider configurations from its parent.
+
+  {{ .Resources }}
+
+  {{ .Inputs }}
+
+  {{ .Outputs }}
+
+output:
+  file: ""
+  mode: inject
+  template: |-
+    <!-- BEGIN_TF_DOCS -->
+    {{ .Content }}
+    <!-- END_TF_DOCS -->
+
+output-values:
+  enabled: false
+  from: ""
+
+sort:
+  enabled: true
+  by: name
+
+settings:
+  anchor: false
+  color: true
+  default: true
+  description: false
+  escape: true
+  hide-empty: false
+  html: false
+  indent: 2
+  lockfile: true
+  read-comments: true
+  required: true
+  sensitive: true
+  type: true
