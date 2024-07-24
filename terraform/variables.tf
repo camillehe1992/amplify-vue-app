@@ -29,7 +29,7 @@ variable "tags" {
 variable "repository" {
   type        = string
   description = "The repository for source code"
-  default     = "https://github.com/camillehe1992/amplify-vue3-vite5-app"
+  default     = "https://github.com/camillehe1992/amplify-vue-app"
 }
 
 variable "access_token" {
