@@ -22,19 +22,17 @@ resource "aws_amplify_app" "this" {
 }
 
 resource "aws_amplify_branch" "develop" {
-  count       = var.environment == "dev" ? 1 : 0
   app_id      = aws_amplify_app.this.id
   branch_name = "develop"
   stage       = "DEVELOPMENT"
-
 
   tags = var.tags
 }
 
 resource "aws_amplify_branch" "main" {
-  count       = var.environment == "prod" ? 1 : 0
   app_id      = aws_amplify_app.this.id
   branch_name = "main"
   stage       = "PRODUCTION"
-  tags        = var.tags
+
+  tags = var.tags
 }

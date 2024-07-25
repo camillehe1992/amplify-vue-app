@@ -25,15 +25,15 @@ The module automatically inherits default provider configurations from its paren
 
 ## Inputs
 
-| Name          | Description                                                                            | Type          | Default                                                     | Required |
-| ------------- | -------------------------------------------------------------------------------------- | ------------- | ----------------------------------------------------------- | :------: |
-| access\_token | Personal access token for a third-party source control system for an Amplify app       | `string`      | n/a                                                         |   yes    |
-| aws\_profile  | AWS profile which used for terraform infra deployment                                  | `string`      | `"default"`                                                 |    no    |
-| aws\_region   | AWS region                                                                             | `string`      | n/a                                                         |   yes    |
-| environment   | The environment of application                                                         | `string`      | n/a                                                         |   yes    |
-| nickname      | The nickname of application. Must be lowercase without special chars                   | `string`      | n/a                                                         |   yes    |
-| repository    | The repository for source code                                                         | `string`      | `"https://github.com/camillehe1992/amplify-vue3-vite5-app"` |    no    |
-| tags          | The key value pairs we want to apply as tags to the resources contained in this module | `map(string)` | n/a                                                         |   yes    |
+| Name          | Description                                                                            | Type          | Default                                              | Required |
+| ------------- | -------------------------------------------------------------------------------------- | ------------- | ---------------------------------------------------- | :------: |
+| access\_token | Personal access token for a third-party source control system for an Amplify app       | `string`      | n/a                                                  |   yes    |
+| aws\_profile  | AWS profile which used for terraform infra deployment                                  | `string`      | `"default"`                                          |    no    |
+| aws\_region   | AWS region                                                                             | `string`      | n/a                                                  |   yes    |
+| environment   | The environment of application                                                         | `string`      | n/a                                                  |   yes    |
+| nickname      | The nickname of application. Must be lowercase without special chars                   | `string`      | n/a                                                  |   yes    |
+| repository    | The repository for source code                                                         | `string`      | `"https://github.com/camillehe1992/amplify-vue-app"` |    no    |
+| tags          | The key value pairs we want to apply as tags to the resources contained in this module | `map(string)` | n/a                                                  |   yes    |
 
 ## Outputs
 
