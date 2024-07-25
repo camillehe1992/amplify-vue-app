@@ -29,11 +29,30 @@ variable "tags" {
 variable "repository" {
   type        = string
   description = "The repository for source code"
-  default     = "https://github.com/camillehe1992/amplify-vue-app"
 }
 
 variable "access_token" {
   type        = string
   description = "Personal access token for a third-party source control system for an Amplify app"
   sensitive   = true
+}
+
+variable "branch_name" {
+  type        = string
+  description = "Name for the branch"
+}
+
+variable "stage" {
+  type        = string
+  description = "Describes the current stage for the branch. Valid values: PRODUCTION, BETA, DEVELOPMENT, EXPERIMENTAL, PULL_REQUEST"
+}
+
+variable "enable_auto_build" {
+  type        = bool
+  description = "Enables auto building for the branch"
+}
+
+variable "enable_pull_request_preview" {
+  type        = bool
+  description = "Enables pull request previews for this branch"
 }
