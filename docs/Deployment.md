@@ -95,7 +95,7 @@ Another option to specify value of variable is to provide the value in command w
 # Validate variables
 make check-env
 
-# ---------- Run below commands to deploy resouces ---------
+# ---------- Run below commands to deploy resources ---------
 
 # Create a Terraform plan named `tfplan`
 make plan
@@ -107,7 +107,7 @@ make apply
 # For quick plan & apply
 make quick-deploy
 
-# ---------- Run below commands to destroy resouces ---------
+# ---------- Run below commands to destroy resources ---------
 
 # Create a Terraform destroy plan named `tfplan`
 make destroy
@@ -131,8 +131,8 @@ make quick-destroy
 
 ### Start a Job for First Deploy
 
-1. Click on "View app" button again, click on "main".
-2. Click on "Run job" button to start a new job for your Amplify branch **main**. The job will takes a 2-3 minutes.
+1. Click on "View app" button again, click on "develop".
+2. Click on "Run job" button to start a new job for your Amplify branch **develop**. The job will takes a 2-3 minutes.
 
 ![first-deployment](./images/first-deployment.png)
 
