@@ -1,10 +1,8 @@
 resource "aws_amplify_app" "this" {
-  name                        = var.nickname
-  repository                  = var.repository
-  access_token                = var.access_token
-  enable_branch_auto_deletion = true
-  enable_branch_auto_build    = true
-  build_spec                  = file("${path.module}/build.yaml")
+  name         = "${var.environment}-${var.nickname}"
+  repository   = var.repository
+  access_token = var.access_token
+  build_spec   = file("${path.module}/build.yaml")
 
   auto_branch_creation_config {
     enable_auto_build = true
@@ -21,18 +19,13 @@ resource "aws_amplify_app" "this" {
   tags = var.tags
 }
 
-resource "aws_amplify_branch" "develop" {
+resource "aws_amplify_branch" "this" {
   app_id      = aws_amplify_app.this.id
-  branch_name = "develop"
-  stage       = "DEVELOPMENT"
+  branch_name = var.branch_name
+  stage       = var.stage
 
-  tags = var.tags
-}
-
-resource "aws_amplify_branch" "main" {
-  app_id      = aws_amplify_app.this.id
-  branch_name = "main"
-  stage       = "PRODUCTION"
+  enable_auto_build           = var.enable_auto_build
+  enable_pull_request_preview = var.enable_pull_request_preview
 
   tags = var.tags
 }
