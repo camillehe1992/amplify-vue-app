@@ -6,6 +6,7 @@ This template provides a Infrastructure as Code (IaC) solution for Vue3 based fr
 - The application is hosted in **AWS Amplify** with Mutli-Apps for multiple environments support.
 - AWS Infrastructure is provisioned and managed using **Terraform**.
 - **GitHub Actions** workflows to provision AWS infrastructure.
+- Enabled ESLint, Prettier, Pre-commit using husky.
 
 Find the detailed introduction from blog [Host a Vue Project in AWS Amplify using Terraform](https://dev.to/camillehe1992/host-a-vue-project-in-aws-amplify-using-terraform-2l89).
 
