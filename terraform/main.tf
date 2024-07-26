@@ -2,11 +2,12 @@ resource "aws_amplify_app" "this" {
   name         = "${var.environment}-${var.nickname}"
   repository   = var.repository
   access_token = var.access_token
-  build_spec   = file("${path.module}/build.yaml")
+  build_spec   = file("${path.module}/amplify.yaml")
 
   auto_branch_creation_config {
-    enable_auto_build = true
-    framework         = "Vue"
+    enable_auto_build           = true
+    enable_pull_request_preview = true
+    framework                   = "Vue"
   }
 
   # The default rewrites and redirects added by the Amplify Console.
