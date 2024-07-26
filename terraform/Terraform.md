@@ -1,6 +1,6 @@
 # Terraform Overview
 
-The detailed information about Terraform infrastructure. Use command [terraform-docs](https://terraform-docs.io/user-guide/installation/)  to re-generate the readme.
+The detailed information about Terraform infrastructure. Use command [terraform-docs](https://terraform-docs.io/user-guide/installation/) to re-generate the readme.
 
 ```bash
 cd terraform
@@ -24,22 +24,22 @@ The module automatically inherits default provider configurations from its paren
 
 ## Inputs
 
-| Name                           | Description                                                                                                          | Type          | Default     | Required |
-| ------------------------------ | -------------------------------------------------------------------------------------------------------------------- | ------------- | ----------- | :------: |
-| access\_token                  | Personal access token for a third-party source control system for an Amplify app                                     | `string`      | n/a         |   yes    |
-| aws\_profile                   | AWS profile which used for terraform infra deployment                                                                | `string`      | `"default"` |    no    |
-| aws\_region                    | AWS region                                                                                                           | `string`      | n/a         |   yes    |
-| branch\_name                   | Name for the branch                                                                                                  | `string`      | n/a         |   yes    |
-| enable\_auto\_build            | Enables auto building for the branch                                                                                 | `bool`        | n/a         |   yes    |
-| enable\_pull\_request\_preview | Enables pull request previews for this branch                                                                        | `bool`        | n/a         |   yes    |
-| environment                    | The environment of application                                                                                       | `string`      | n/a         |   yes    |
-| nickname                       | The nickname of application. Must be lowercase without special chars                                                 | `string`      | n/a         |   yes    |
-| repository                     | The repository for source code                                                                                       | `string`      | n/a         |   yes    |
-| stage                          | Describes the current stage for the branch. Valid values: PRODUCTION, BETA, DEVELOPMENT, EXPERIMENTAL, PULL\_REQUEST | `string`      | n/a         |   yes    |
-| tags                           | The key value pairs we want to apply as tags to the resources contained in this module                               | `map(string)` | n/a         |   yes    |
+| Name                        | Description                                                                                                         | Type          | Default     | Required |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------- | ----------- | :------: |
+| access_token                | Personal access token for a third-party source control system for an Amplify app                                    | `string`      | n/a         |   yes    |
+| aws_profile                 | AWS profile which used for terraform infra deployment                                                               | `string`      | `"default"` |    no    |
+| aws_region                  | AWS region                                                                                                          | `string`      | n/a         |   yes    |
+| branch_name                 | Name for the branch                                                                                                 | `string`      | n/a         |   yes    |
+| enable_auto_build           | Enables auto building for the branch                                                                                | `bool`        | n/a         |   yes    |
+| enable_pull_request_preview | Enables pull request previews for this branch                                                                       | `bool`        | n/a         |   yes    |
+| environment                 | The environment of application                                                                                      | `string`      | n/a         |   yes    |
+| nickname                    | The nickname of application. Must be lowercase without special chars                                                | `string`      | n/a         |   yes    |
+| repository                  | The repository for source code                                                                                      | `string`      | n/a         |   yes    |
+| stage                       | Describes the current stage for the branch. Valid values: PRODUCTION, BETA, DEVELOPMENT, EXPERIMENTAL, PULL_REQUEST | `string`      | n/a         |   yes    |
+| tags                        | The key value pairs we want to apply as tags to the resources contained in this module                              | `map(string)` | n/a         |   yes    |
 
 ## Outputs
 
-| Name              | Description                        |
-| ----------------- | ---------------------------------- |
-| amplify\_app\_url | Default domain for the Amplify app |
+| Name            | Description                        |
+| --------------- | ---------------------------------- |
+| amplify_app_url | Default domain for the Amplify app |

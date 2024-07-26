@@ -1,4 +1,4 @@
-# Host a Vue Application in AWS Amplify
+# Host a Vue Project in AWS Amplify using Terraform
 
 This template provides a Infrastructure as Code (IaC) solution for Vue3 based frontend application that hosted in AWS Amplify service. The solution has below features:
 
@@ -6,6 +6,9 @@ This template provides a Infrastructure as Code (IaC) solution for Vue3 based fr
 - The application is hosted in **AWS Amplify** with Mutli-Apps for multiple environments support.
 - AWS Infrastructure is provisioned and managed using **Terraform**.
 - **GitHub Actions** workflows to provision AWS infrastructure.
+- Enabled ESLint, Prettier, Pre-commit using husky.
+
+Find the detailed introduction from blog [Host a Vue Project in AWS Amplify using Terraform](https://dev.to/camillehe1992/host-a-vue-project-in-aws-amplify-using-terraform-2l89).
 
 ## Get Started
 
@@ -45,3 +48,5 @@ Follows the [documentation](./docs/Deployment.md) to deploy the application to A
 - [AWS Amplify](https://aws.amazon.com/amplify/?gclid=CjwKCAjw74e1BhBnEiwAbqOAjL3OaYibKLHhet57mObXvsfr4_Q-euu366CVlQYrNTNEFRmfg7LmpRoCCb4QAvD_BwE&trk=b845ae09-4d10-4f92-a039-7c89dcf49eaf&sc_channel=ps&ef_id=CjwKCAjw74e1BhBnEiwAbqOAjL3OaYibKLHhet57mObXvsfr4_Q-euu366CVlQYrNTNEFRmfg7LmpRoCCb4QAvD_BwE:G:s&s_kwcid=AL!4422!3!647258095158!e!!g!!aws%20amplify!19621370789!149166973081)
 - [Vuejs](https://vuejs.org/guide/introduction.html)
 - [Vite](https://vitejs.dev/guide/#scaffolding-your-first-vite-project)
+- [Prettier](vue/require-default-prop)
+- [ESLint](https://eslint.org/docs/latest/use/configure/configuration-files)

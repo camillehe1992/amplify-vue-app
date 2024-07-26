@@ -42,7 +42,7 @@ terraform -v
 
 ### 2. Install AWS CLI
 
-Follows AWS official [documentation](<https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html>) to install AWS CLI V2 on the local machine.
+Follows AWS official [documentation](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) to install AWS CLI V2 on the local machine.
 
 ```bash
 aws --version
@@ -51,7 +51,7 @@ aws --version
 
 ### 3. Configure AWS Credentials
 
-After installing AWS CLI, you must setup AWS credentials on the machine so that you can deploy Terraform resources to AWS account. AWS provides a detailed [documentation](<https://docs.aws.amazon.com/cli/latest/userguide/cli-authentication-user.html>) to introduce how to setup AWS credentials based on different AWS authentication methods. In this repo, I choose long-term credentials which is not recommended in a real project because of security risks.
+After installing AWS CLI, you must setup AWS credentials on the machine so that you can deploy Terraform resources to AWS account. AWS provides a detailed [documentation](https://docs.aws.amazon.com/cli/latest/userguide/cli-authentication-user.html) to introduce how to setup AWS credentials based on different AWS authentication methods. In this repo, I choose long-term credentials which is not recommended in a real project because of security risks.
 
 > When you attach policies for your IAM user, choose `AdministratorAccess` in order to deploy AWS resources. As I'm going to reuse this IAM user to deploy a batch of AWS resources, attach `AdministratorAccess` is pretty easiler, but lack of security. You should keep it in mind.
 
@@ -73,9 +73,9 @@ Run `aws sts get-caller-identity --profile app-deployer` to validate if the cren
 
 ```json
 {
-    "UserId": "XXXXXXXXXXXXXXXXXXXX",
-    "Account": "123456789012",
-    "Arn": "arn:aws:iam::123456789012:user/user1"
+  "UserId": "XXXXXXXXXXXXXXXXXXXX",
+  "Account": "123456789012",
+  "Arn": "arn:aws:iam::123456789012:user/user1"
 }
 ```
 
