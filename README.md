@@ -1,12 +1,16 @@
 # Host a Vue Project in AWS Amplify using Terraform
 
+[![license](https://img.shields.io/badge/license-apache-blue.svg)](https://github.com/camillehe1992/scaffolding-serverless-project-on-aws/blob/main/LICENSE)
+[![nodejs-18.18.2](https://img.shields.io/badge/nodejs-18.18.2-green.svg)](https://www.python.org/downloads/release/nodejs-18/)
+[![version](https://img.shields.io/badge/version-0.0.1-green.svg)](https://github.com/camillehe1992/scaffolding-serverless-project-on-aws/releases/tag/v0.0.1)
+
 This template provides a Infrastructure as Code (IaC) solution for Vue3 based frontend application that hosted in AWS Amplify service. The solution has below features:
 
 - A **Vue3** (3.4.31) based frontend application that built using latest **Vite** (5.3.4).
 - The application is hosted in **AWS Amplify** with Mutli-Apps for multiple environments support.
 - AWS Infrastructure is provisioned and managed using **Terraform**.
 - **GitHub Actions** workflows to provision AWS infrastructure.
-- Enabled ESLint, Prettier, Pre-commit using husky.
+- Enabled **ESLint**, **Prettier**, pre-commit using husky.
 
 Find the detailed introduction from blog [Host a Vue Project in AWS Amplify using Terraform](https://dev.to/camillehe1992/host-a-vue-project-in-aws-amplify-using-terraform-2l89).
 
