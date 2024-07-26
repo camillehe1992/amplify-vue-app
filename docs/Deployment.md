@@ -7,10 +7,6 @@
     - [3. Configure AWS Credentials](#3-configure-aws-credentials)
     - [4. Execute Make Commands](#4-execute-make-commands)
   - [Deploy via GitHub Actions Workflows](#deploy-via-github-actions-workflows)
-    - [Enable Connection between GitHub \& Amplify Manually](#enable-connection-between-github--amplify-manually)
-    - [Start a Job for First Deploy](#start-a-job-for-first-deploy)
-    - [View Your Application via Domain](#view-your-application-via-domain)
-  - [References](#references)
 
 ## Deploy from Local Machine
 
@@ -87,7 +83,14 @@ Run `aws sts get-caller-identity --profile app-deployer` to validate if the cren
 
 For quick deploy and varify local code change, we use `make` commands to execute Terraform CLI from local machine.
 
-Firstly, create a `.env` from `env.sample`, and update environment variables. The `.env` file won't be checked into your source code. After updated, these variables in `.env` will be injected into `Makefile` when you execute `make` commands. You can run `make check_env` to validate these variables.
+Firstly, create a `.env` from `env.sample`, and update below environment variables. The `.env` file won't be checked into your source code. After updated, these variables in `.env` will be injected into `Makefile` when you execute `make` commands. You can run `make check_env` to validate these variables.
+
+```bash
+AWS_REGION=REPLACE_ME         # your AWS account region
+STATE_BUCKET=REPLACE_ME       # your S3 bucket name for storing Terraform state files
+NICKNAME=REPLACE_ME           # nickname of application
+ACCESS_TOKEN=REPLACE_ME       # the personal access token in your GitHub personal account
+```
 
 Another option to specify value of variable is to provide the value in command which has high priority than `.env`. For example, use `make ENVIRONMENT=prod check_env` to overwrite the `ENVIRONMENT` variable to `prod` instead of `dev` defined in `.env`.
 
@@ -95,7 +98,7 @@ Another option to specify value of variable is to provide the value in command w
 # Validate variables
 make check-env
 
-# ---------- Run below commands to deploy resouces ---------
+# ---------- Run below commands to deploy resources ---------
 
 # Create a Terraform plan named `tfplan`
 make plan
@@ -107,7 +110,7 @@ make apply
 # For quick plan & apply
 make quick-deploy
 
-# ---------- Run below commands to destroy resouces ---------
+# ---------- Run below commands to destroy resources ---------
 
 # Create a Terraform destroy plan named `tfplan`
 make destroy
@@ -119,29 +122,40 @@ make apply
 make quick-destroy
 ```
 
+After "make quick-deploy" command is completed, go to AWS Amplify console to view your new created Amplify App "dev-amplify-vue-app". Start a deployment from AWS console manually from View app -> develop -> Run job.
+
+![amplify-app](./images/amplify-app.png)
+
+With a successful deployment, your can access the application via domain url: <https://{branch-name}.{app-id}.amplifyapp.com>
+
+![vue-app](./images/vue-app.png)
+
 ## Deploy via GitHub Actions Workflows
 
-### Enable Connection between GitHub & Amplify Manually
+Add variables and secrets in GitHub -> Settings -> Security -> Secrets and variables -> Actions.
 
-1. Go to AWS Console -> Amplify. There is a warning popup shows that you need to manual enable a connection from AWS console, so that your source code change is able to trigger a build automatically.
-   ![amplify](./images/amplify.png)
-2. Click on "View app" button. A dialog named "Migrate to our GitHub app" appears.
-   ![start-migration](./images/start-migration.png)
-3. Click on "Start migration". Configure GitHub App. You should get "GitHub authorization successful" after a few seconds. Next -> Complete installation.
+```bash
+# Secrets
+TF_VAR_ACCESS_TOKEN   # The same as ACCESS_TOKEN in .env
 
-### Start a Job for First Deploy
+# Variables
+AWS_REGION            # The same as AWS_REGION in .env
+ROLE_SESSION_NAME     # The seesion name of using OIDC for authentication
+ROLE_TO_ASSUME        # The role to assume when using OIDC for authentication
+STATE_BUCKET          # The same as STATE_BUCKET in .env
+```
 
-1. Click on "View app" button again, click on "main".
-2. Click on "Run job" button to start a new job for your Amplify branch **main**. The job will takes a 2-3 minutes.
+The blog explains how to [deploy Terraform resources to AWS using GitHub Actions via OIDC](https://dev.to/camillehe1992/deploy-terraform-resources-to-aws-using-github-actions-via-oidc-3b9g).
 
-![first-deployment](./images/first-deployment.png)
+There are two workflows:
 
-### View Your Application via Domain
+- [Deploy to Dev workflow](https://github.com/camillehe1992/amplify-vue-app/actions/workflows/deploy-to-dev.yaml): provision AWS infrastructure in dev environment.
+- [Deploy to Prod workflow](https://github.com/camillehe1992/amplify-vue-app/actions/workflows/deploy-to-prod.yaml): provision AWS infrastructure in prod environment.
 
-Domain URL: <https://main.d151h95lghat49.amplifyapp.com>
+![github-actions](./images/github-actions.png)
 
-> Please be noted that the demo Apmlifyapp is removed after demostration.
+Select the target branch from dropdown list, check the box if this is a destroy action, and click on the button to run workflow.
 
-![react-app](./images/react-app.png)
+![run-workflow](./images/run-workflow.png)
 
-## References
+After completed, go to AWS Amplify console to view the Amplify App.

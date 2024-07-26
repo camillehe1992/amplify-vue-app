@@ -12,6 +12,6 @@ tags = {
 # Project Specific Variables
 repository                  = "https://github.com/camillehe1992/amplify-vue-app"
 branch_name                 = "develop"
-stage                       = "DEVELOPMENT"
+stage                       = "PRODUCTION"
 enable_auto_build           = true
-enable_pull_request_preview = false
+enable_pull_request_preview = true
