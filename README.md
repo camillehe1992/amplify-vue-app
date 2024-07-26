@@ -47,3 +47,5 @@ Follows the [documentation](./docs/Deployment.md) to deploy the application to A
 - [AWS Amplify](https://aws.amazon.com/amplify/?gclid=CjwKCAjw74e1BhBnEiwAbqOAjL3OaYibKLHhet57mObXvsfr4_Q-euu366CVlQYrNTNEFRmfg7LmpRoCCb4QAvD_BwE&trk=b845ae09-4d10-4f92-a039-7c89dcf49eaf&sc_channel=ps&ef_id=CjwKCAjw74e1BhBnEiwAbqOAjL3OaYibKLHhet57mObXvsfr4_Q-euu366CVlQYrNTNEFRmfg7LmpRoCCb4QAvD_BwE:G:s&s_kwcid=AL!4422!3!647258095158!e!!g!!aws%20amplify!19621370789!149166973081)
 - [Vuejs](https://vuejs.org/guide/introduction.html)
 - [Vite](https://vitejs.dev/guide/#scaffolding-your-first-vite-project)
+- [Prettier](vue/require-default-prop)
+- [ESLint](https://eslint.org/docs/latest/use/configure/configuration-files)
