@@ -11,7 +11,7 @@ jobs:
       fail-fast: false
       matrix:
         language: [javascript-typescript]
-    uses: camillehe1992/reusable-workflows/.github/workflows/codeql.yaml@main
+    uses: camillehe1992/reusable-workflows/.github/workflows/codeql-scan.yaml@main
     secrets: inherit
     with:
       language: ${{ matrix.language }}
