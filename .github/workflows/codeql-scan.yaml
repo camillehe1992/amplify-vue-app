@@ -7,12 +7,8 @@ run-name: Run CodeQL Scan from ${{ github.ref_name }} branch
 
 jobs:
   codeql:
-    strategy:
-      fail-fast: false
-      matrix:
-        language: [javascript-typescript]
     uses: camillehe1992/reusable-workflows/.github/workflows/codeql-scan.yaml@main
     secrets: inherit
     with:
-      language: ${{ matrix.language }}
+      language: javascript-typescript
       config-file: ./.github/codeql/codeql-config.yaml
