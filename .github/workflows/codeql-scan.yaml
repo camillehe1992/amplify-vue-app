@@ -5,6 +5,15 @@ on:
 
 run-name: Run CodeQL Scan from ${{ github.ref_name }} branch
 
+permissions:
+  # required for all workflows
+  security-events: writ
+  # required to fetch internal or private CodeQL packs
+  packages: rea
+  # only required for workflows in private repositories
+  actions: read
+  contents: read
+
 jobs:
   codeql:
     uses: camillehe1992/reusable-workflows/.github/workflows/codeql-scan.yaml@main
