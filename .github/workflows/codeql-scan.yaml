@@ -7,9 +7,9 @@ run-name: Run CodeQL Scan from ${{ github.ref_name }} branch
 
 permissions:
   # required for all workflows
-  security-events: writ
+  security-events: write
   # required to fetch internal or private CodeQL packs
-  packages: rea
+  packages: read
   # only required for workflows in private repositories
   actions: read
   contents: read
