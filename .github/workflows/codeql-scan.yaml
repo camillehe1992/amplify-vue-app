@@ -5,11 +5,6 @@ on:
 
 run-name: Run CodeQL Scan from ${{ github.ref_name }} branch
 
-permissions:
-  actions: read
-  contents: write
-  security-events: write
-
 jobs:
   codeql:
     strategy:
